@@ -59,6 +59,18 @@ for slovo in text_1.split():
 # celkovy pocet slov pro text 1
 celkem_1 = len(vycisteny_text_1)
 
+# titlecase words pro text 1
+title_1 = 0
+for word in vycisteny_text_1:
+    if word.istitle():
+        title_1 += 1
+
+# uppercase words pro text 1
+uppercase_1 = 0
+for word in vycisteny_text_1:
+    if word.isupper() and word.isalpha():
+        uppercase_1 += 1
+
 vyber_cisla = input('Enter a number btw. 1 and 3 to select:')
 if vyber_cisla.isnumeric() == True and  vyber_cisla not in TEXTS.keys():
     print ('Toto číslo není v rozmezí 1-3')
@@ -67,28 +79,7 @@ elif vyber_cisla.isnumeric() == False:
     print ('Zadaná hodnota není číslo')
     quit()
 elif vyber_cisla == '1':
+    print(oddelovac)
     print (f"There are {celkem_1} words in the selected text.")
-
-# celkovy pocet slov pro text 1
-# celkem_text_1 = dict()
-
-# vyskyt slov pro text 1
-
-
-# vyskyt_slov_1 = dict()
-
-# for slovo in vycisteny_text_1:
-#     if slovo not in vyskyt_slov_1:
-#         vyskyt_slov_1[slovo] = 1
-#     else:
-#         vyskyt_slov_1[slovo] = vyskyt_slov_1[slovo] + 1
-# print(vyskyt_slov_1)
-#
-# # 5 nejcastejsich hodnot
-# pet_nejcastejsich = sorted(vyskyt_slov.values(), reverse=True)[:5]
-#
-# # Slova s nejcastesjim vyskytem
-# vysledky = []
-# for slovo in vyskyt_slov:
-#     if vyskyt_slov[slovo] in pet_nejcastejsich:
-#         vysledky.append((vyskyt_slov[slovo], slovo))
+    print (f"There are {title_1} titlecase words.")
+    print(f"There are {uppercase_1} uppercase words.")
