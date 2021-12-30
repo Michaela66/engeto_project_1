@@ -188,7 +188,7 @@ for delka in delky_slov_3:
 
 vyber_cisla = input('Enter a number btw. 1 and 3 to select:')
 if vyber_cisla.isnumeric() == True and vyber_cisla not in TEXTS.keys():
-    print('Toto číslo není v rozmezí 1-3')
+    print('This number is not between 1-3')
     quit()
 elif vyber_cisla.isnumeric() == False:
     print('Zadaná hodnota není číslo')
